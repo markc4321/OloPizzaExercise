@@ -30,6 +30,9 @@ namespace OloSolution
                 Console.WriteLine("An Error occured. Message {0}", ex.Message);
             }
 
+            Console.WriteLine("Press ENTER key to close.");
+            Console.Read();
+        
         }
 
         private static IEnumerable<Topping> Topping20PizzaCombos(string fileToProcess)
