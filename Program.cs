@@ -3,6 +3,7 @@ using System.Net;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Script.Serialization;
+using System.IO;
 
 namespace OloPizzaExercise
 {
@@ -21,7 +22,13 @@ namespace OloPizzaExercise
                 foreach (Topping t in result) 
                 {
                     rankCtr++;
-                    Console.WriteLine("Rank: {0}  Times Ordered: {1}  Combo: {2}", rankCtr, t.count, String.Join(", ", t.toppings.ToArray()));
+
+                    string outputLine = String.Format("Rank: {0}  Times Ordered: {1}  Combo: {2}", rankCtr, t.count, String.Join(", ", t.toppings.ToArray()));
+                    Console.WriteLine(outputLine);
+                    using (StreamWriter writer = new StreamWriter(@"C:\temp\oloExercise.txt", true))
+                    { 
+                        writer.WriteLine(outputLine);
+                    }
 
                 }
 
