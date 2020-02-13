@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Script.Serialization;
 
-namespace OloSolution
+namespace OloPizzaExercise
 {
+   
     class Program
     {
         static void Main(string[] args)
